@@ -14,18 +14,21 @@ countries <- data %>%
 
 values <- list()
 
+# average 2021 annual co2 emissions
 values$average_2021_co2 <- data %>%
   filter(year == "2021") %>%
   filter(country != "World") %>%
   summarize(avg = round(mean(co2, na.rm = TRUE))) %>%
   pull(avg)
 
+# country with the highest co2 emissions 
 values$highest_2021_co2_country <- data %>%
   filter(year == "2021") %>%
   filter(country != 'World') %>%
   filter(co2 == (max(co2, na.rm = TRUE))) %>%
   select(country, co2)
 
+# country with the lowest co2 emissions
 values$lowest_2021_co2_country <- data %>%
   filter(year == "2021") %>%
   filter(country != 'World') %>%
@@ -34,6 +37,7 @@ values$lowest_2021_co2_country <- data %>%
 
 server <- function(input, output) {
   
+  # renders intro with 3 key values
   output$intro <- renderText({
     paste("Climate change has been a significant concern for many people in the
     world. Many people wonder if there is a way to decrease the amount of 

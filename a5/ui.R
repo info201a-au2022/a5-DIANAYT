@@ -4,6 +4,7 @@ library(ggplot2)
 library(tidyverse)
 library(plotly)
 
+# intro page
 intro <- tabPanel(
   "Introduction",
   titlePanel("Investigating Carbon Dioxide Emissions and GDP"),
