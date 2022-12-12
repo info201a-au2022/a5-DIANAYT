@@ -48,7 +48,7 @@ server <- function(input, output) {
     values$average_2021_co2, ". That amount is no small number. Additionally,
     the country with the highest annual million tonnes of carbon dioxide
     emissions was ", values$highest_2021_co2_country$country, " with ",
-    round(values$highest_2021_co2_country$co2), " million tonnes. In comparison,
+    format(round(values$highest_2021_co2_country$co2), big.mark=","), " million tonnes. In comparison,
     the country with the lowest was ", values$lowest_2021_co2_country$country, " 
     with ", values$lowest_2021_co2_country$co2, " million tonnes. The
     difference in million tonnes is large, but what contributes to that
